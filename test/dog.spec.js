@@ -8,9 +8,7 @@ var pet    = new Dog( 'bolt' );
 // global describe
 describe( 'Dog', function() {
   it( 'should bark', function() {
-    var expected  = 'guau, guau!';
-    var bark = pet.bark();
-    expect( bark ).to.equal( expected );
+    expect( pet.bark() ).to.equal( 'guau, guau!' );
   });
   
   it( 'should eat', function() {
