@@ -1,0 +1,14 @@
+{
+  "name": "prueba",
+  "version": "0.1.0",
+  "description": "Paquete de prueba",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Chepeteam",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^2.2.0",
+    "underscore": "^1.8.2"
+  }
+}
