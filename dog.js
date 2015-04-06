@@ -87,7 +87,7 @@ Dog.prototype.poo = function() {
 }
 
 /**
- * Metodo para acceder a la varibale happiness
+ * Metodo para acceder a la varibale happiness - Se usa para las pruebas Unitarias
  * @returns {int} - The actual dog happiness
  */
 Dog.prototype.getHappiness = function() {
