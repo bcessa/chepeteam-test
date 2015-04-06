@@ -26,7 +26,15 @@ describe( 'Dog', function() {
   });
   
   it( 'should to play', function() {
-    expect( pet.play() ).to.equal( 105 );
+    var first = pet.getHappiness();
+    pet.play();
+    var second = pet.getHappiness();
+    expect( second ).to.equal( first + 5 );
   });
   
+  it( 'should fly', function() {
+    var first = pet.getHappiness();
+    pet.fly();
+    expect( pet.getHappiness() ).to.equal( first + 20 );
+  });
 });

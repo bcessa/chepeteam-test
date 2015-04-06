@@ -47,6 +47,18 @@ function Dog( name, race ) {
    * @default 'chihuahua'
    */
   this.race = race || 'chihuaha';
+
+  /** 
+   * @member {int} - Dog's rest in points
+   * @default 20
+   */
+  this.rest = 20;
+
+  /** 
+   * @member {int} - Dog's happiness in points
+   * @default 100
+   */
+  this.happiness = 100;
 }
 
 /**
@@ -81,13 +93,35 @@ Dog.prototype.poo = function() {
 };
 
 /**
+ * Metodo para acceder a la varibale happiness  
+ * @returns {int} - The actual dog happiness
+ */
+Dog.prototype.getHappiness = function() {
+  return this.happiness;
+};
+
+/**
+ * Hace al perro volar; this.happiness += 20; this.rest -= 10;
+ * @returns {string}  - The actual dog happiness
+ */
+Dog.prototype.fly = function() {
+  if( this.rest<20 ) {
+    return 'Sorry!, No tienes suficiente descanso para volar.';
+  } else {
+    this.happiness += 20;
+    this.rest -= 10;
+    return 'Acabas de hacer un vuelo, nivel de felicidad es: ' + this.happiness;
+  }
+};
+
+/**
  * Make dog to play; it increase the level of happiness 5 points
  * @returns {int} - happiness value
  */
-Dog.prototype.play = function() {
-  this.happiness += 5;
-  return this.happiness;
-};
+ Dog.prototype.play = function() {
+   this.happiness += 5;
+   return this.happiness;
+ };
 
 /**
  * Generate a JSON representation of the dog
