@@ -24,4 +24,10 @@ describe( 'Dog', function() {
     pet.poo();
     expect( pet.getWeight() ).to.equal( 1.05 );
   });
+
+  it('should be able to coshear', function(){
+    expect( pet.coshear() ).to.equal("Dog coshing :D!!");
+    expect( pet.coshear() ).to.equal("Dog can't coshear");
+  });
+
 });

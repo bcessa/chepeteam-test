@@ -17,7 +17,7 @@
  * @param {string} race - Race of the dog, optional
  * @example var myPet = new Dog( 'bolt' );
  */
-function Dog( name, race ) {
+function Dog( name, race, rest ) {
   /** 
    * @member {string} - Dog's name
    * @default 'doggy'
@@ -41,6 +41,12 @@ function Dog( name, race ) {
    * @default 'chihuahua'
    */
   this.race = race || 'chihuaha';
+
+  /**
+  * @member {int} - Dog's rest
+    @default '20'
+  */
+  this.rest = rest || 20;
 }
 
 /**
@@ -80,6 +86,23 @@ Dog.prototype.poo = function() {
  */
 Dog.prototype.info = function() {
   return JSON.stringify( this );
+}
+
+/**
+* Make dog coshear; it will increases happiness in 100units and decreases rest in 20units, 
+if the dog don't have enough rest, just can't coshear
+*  @returns {string}
+*/
+Dog.prototype.coshear = function(){
+  var msg;
+  if(this.rest < 20){
+    msg = "Dog can't coshear";
+  }else{
+    this.happiness += ( this.happiness + 100 );
+    this.rest -= ( this.rest - 10 );
+    msg = "Dog coshing :D!!";
+  }
+  return msg;
 }
 
 /**
