@@ -26,12 +26,15 @@ describe( 'Dog', function() {
   });
   
   it( 'should to play', function() {
-    expect( pet.play() ).to.equal( 105 );
+    var first = pet.getHappiness();
+    pet.play();
+    var second = pet.getHappiness();
+    expect( second ).to.equal( first + 5 );
   });
   
   it( 'should fly', function() {
-    expect( pet.getHappiness() ).to.equal( 100 );
-    expect( pet.fly() ).to.equal( 'Acabas de hacer un vuelo, nivel de felicidad es: ' + pet.getHappiness() );
-    expect( pet.getHappiness() ).to.equal( 120 );
+    var first = pet.getHappiness();
+    pet.fly();
+    expect( pet.getHappiness() ).to.equal( first + 20 );
   });
 });
