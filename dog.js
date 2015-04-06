@@ -25,6 +25,12 @@ function Dog( name, race, rest ) {
   this.name = name || 'doggy';
   
   /** 
+   * @member {int} - Dog's happiness
+   * @default 100
+   */
+  this.happiness = 100;
+  
+  /** 
    * @member {int} - Dog's age in years
    * @default 1
    */
@@ -42,11 +48,18 @@ function Dog( name, race, rest ) {
    */
   this.race = race || 'chihuaha';
 
-  /**
-  * @member {int} - Dog's rest
-    @default '20'
-  */
+  /** 
+   * @member {int} - Dog's rest in points
+   * @default 20
+   */
   this.rest = rest || 20;
+
+  /** 
+   * @member {int} - Dog's happiness in points
+   * @default 100
+   */
+  this.happiness = 100;
+
 }
 
 /**
@@ -55,7 +68,7 @@ function Dog( name, race, rest ) {
  */
 Dog.prototype.bark = function() {
   return 'guau, guau!';
-}
+};
 
 /**
  * Make the dog eat some food, this will increment it's weight in 10%
@@ -63,7 +76,7 @@ Dog.prototype.bark = function() {
  */
 Dog.prototype.eat = function( amountOfFood ) {
   this.weight += amountOfFood * 0.10;
-}
+};
 
 /**
  * Accesor method for the dog's weight property
@@ -71,14 +84,53 @@ Dog.prototype.eat = function( amountOfFood ) {
  */
 Dog.prototype.getWeight = function() {
   return Math.round( this.weight * 100) / 100;
-}
+};
 
 /**
  * Make dog to the bathroom; it will lost 5% of weight by default
  */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
-}
+};
+
+/**
+ * Metodo para acceder a la varibale happiness  
+ * @returns {int} - The actual dog happiness
+ */
+Dog.prototype.getHappiness = function() {
+  return this.happiness;
+};
+
+/**
+ * Metodo para acceder a la varibale rest  
+ * @returns {int} - The actual dog rest
+ */
+Dog.prototype.getRest = function() {
+  return this.rest;
+};
+
+/**
+ * Hace al perro volar; this.happiness += 20; this.rest -= 10;
+ * @returns {string}  - The actual dog happiness
+ */
+Dog.prototype.fly = function() {
+  if( this.rest<20 ) {
+    return 'Sorry!, No tienes suficiente descanso para volar.';
+  } else {
+    this.happiness += 20;
+    this.rest -= 10;
+    return 'Acabas de hacer un vuelo, nivel de felicidad es: ' + this.happiness;
+  }
+};
+
+/**
+ * Make dog to play; it increase the level of happiness 5 points
+ * @returns {int} - happiness value
+ */
+ Dog.prototype.play = function() {
+   this.happiness += 5;
+   return this.happiness;
+ };
 
 /**
  * Generate a JSON representation of the dog
@@ -86,24 +138,25 @@ Dog.prototype.poo = function() {
  */
 Dog.prototype.info = function() {
   return JSON.stringify( this );
-}
+};
 
 /**
-* Make dog coshear; it will increases happiness in 100units and decreases rest in 20units, 
+* Make dog coshear; it will increases happiness in 100units 
+and decreases rest in 20units, 
 if the dog don't have enough rest, just can't coshear
 *  @returns {string}
 */
 Dog.prototype.coshear = function(){
   var msg;
   if(this.rest < 20){
-    msg = "Dog can't coshear";
+    msg = 'Dog cant coshear';
   }else{
     this.happiness += ( this.happiness + 100 );
     this.rest -= ( this.rest - 10 );
-    msg = "Dog coshing :D!!";
+    msg = 'Dog coshing :D!!';
   }
   return msg;
-}
+};
 
 /**
  * Dog constructor

@@ -25,9 +25,23 @@ describe( 'Dog', function() {
     expect( pet.getWeight() ).to.equal( 1.05 );
   });
 
-  it('should be able to coshear :)', function(){
-    expect( pet.coshear() ).to.equal("Dog coshing :D!!");
-    expect( pet.coshear() ).to.equal("Dog can't coshear");
+  it( 'should to play', function() {
+    var first = pet.getHappiness();
+    pet.play();
+    var second = pet.getHappiness();
+    expect( second ).to.equal( first + 5 );
+  });
+  
+  it( 'should fly', function() {
+    var first = pet.getHappiness();
+    pet.fly();
+    expect( pet.getHappiness() ).to.equal( first + 20 );
   });
 
+   it('should be able to coshear :)', function(){
+    expect( pet.coshear() ).to.equal("Dog can't coshear");
+    var new_pet = new Dog('Elias');
+    expect( new_pet.coshear() ).to.equal("Dog coshing :D!!");
+  });
+  
 });
