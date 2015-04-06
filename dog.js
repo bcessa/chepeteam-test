@@ -25,6 +25,12 @@ function Dog( name, race ) {
   this.name = name || 'doggy';
   
   /** 
+   * @member {int} - Dog's happiness
+   * @default 100
+   */
+  this.happiness = 100;
+  
+  /** 
    * @member {int} - Dog's age in years
    * @default 1
    */
@@ -49,7 +55,7 @@ function Dog( name, race ) {
  */
 Dog.prototype.bark = function() {
   return 'guau, guau!';
-}
+};
 
 /**
  * Make the dog eat some food, this will increment it's weight in 10%
@@ -57,7 +63,7 @@ Dog.prototype.bark = function() {
  */
 Dog.prototype.eat = function( amountOfFood ) {
   this.weight += amountOfFood * 0.10;
-}
+};
 
 /**
  * Accesor method for the dog's weight property
@@ -65,14 +71,23 @@ Dog.prototype.eat = function( amountOfFood ) {
  */
 Dog.prototype.getWeight = function() {
   return Math.round( this.weight * 100) / 100;
-}
+};
 
 /**
  * Make dog to the bathroom; it will lost 5% of weight by default
  */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
-}
+};
+
+/**
+ * Make dog to play; it increase the level of happiness 5 points
+ * @returns {int} - happiness value
+ */
+Dog.prototype.play = function() {
+  this.happiness += 5;
+  return this.happiness;
+};
 
 /**
  * Generate a JSON representation of the dog
@@ -80,7 +95,7 @@ Dog.prototype.poo = function() {
  */
 Dog.prototype.info = function() {
   return JSON.stringify( this );
-}
+};
 
 /**
  * Dog constructor
