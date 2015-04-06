@@ -41,6 +41,18 @@ function Dog( name, race ) {
    * @default 'chihuahua'
    */
   this.race = race || 'chihuaha';
+
+  /** 
+   * @member {int} - Dog's rest in points
+   * @default 20
+   */
+  this.rest = 20;
+
+  /** 
+   * @member {int} - Dog's happiness in points
+   * @default 100
+   */
+  this.happiness = 100;
 }
 
 /**
@@ -72,6 +84,28 @@ Dog.prototype.getWeight = function() {
  */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
+}
+
+/**
+ * Metodo para acceder a la varibale happiness
+ * @returns {int} - The actual dog happiness
+ */
+Dog.prototype.getHappiness = function() {
+  return this.happiness;
+}
+
+/**
+ * Hace al perro volar; aumenta nuvel de felicidad 20pts y disminuye descanso en 10pts
+ * @returns {string}  - The actual dog happiness
+ */
+Dog.prototype.fly = function() {
+  if(this.rest<20){
+    return 'Sorry!, No tienes suficiente descanso para volar.';
+  }else{
+    this.happiness += 20;
+    this.rest -= 10;
+    return 'Acabas de hacer un vuelo...tu nivel de felicidad es: ' + this.happiness;
+  }
 }
 
 /**
