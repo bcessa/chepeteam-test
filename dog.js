@@ -61,7 +61,7 @@ function Dog( name, race ) {
  */
 Dog.prototype.bark = function() {
   return 'guau, guau!';
-}
+};
 
 /**
  * Make the dog eat some food, this will increment it's weight in 10%
@@ -69,7 +69,7 @@ Dog.prototype.bark = function() {
  */
 Dog.prototype.eat = function( amountOfFood ) {
   this.weight += amountOfFood * 0.10;
-}
+};
 
 /**
  * Accesor method for the dog's weight property
@@ -77,25 +77,25 @@ Dog.prototype.eat = function( amountOfFood ) {
  */
 Dog.prototype.getWeight = function() {
   return Math.round( this.weight * 100) / 100;
-}
+};
 
 /**
  * Make dog to the bathroom; it will lost 5% of weight by default
  */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
-}
+};
 
 /**
- * Metodo para acceder a la varibale happiness - Se usa para las pruebas Unitarias
+ * Metodo para acceder a la varibale happiness  
  * @returns {int} - The actual dog happiness
  */
 Dog.prototype.getHappiness = function() {
   return this.happiness;
-}
+};
 
 /**
- * Hace al perro volar; aumenta nivel de felicidad 20pts y disminuye descanso en 10pts
+ * Hace al perro volar; this.happiness += 20; this.rest -= 10;
  * @returns {string}  - The actual dog happiness
  */
 Dog.prototype.fly = function() {
@@ -104,9 +104,9 @@ Dog.prototype.fly = function() {
   } else {
     this.happiness += 20;
     this.rest -= 10;
-    return 'Acabas de hacer un vuelo...tu nivel de felicidad es: ' + this.happiness;
+    return 'Acabas de hacer un vuelo, nivel de felicidad es: ' + this.happiness;
   }
-}
+};
 
 /**
  * Generate a JSON representation of the dog
@@ -114,7 +114,7 @@ Dog.prototype.fly = function() {
  */
 Dog.prototype.info = function() {
   return JSON.stringify( this );
-}
+};
 
 /**
  * Dog constructor
