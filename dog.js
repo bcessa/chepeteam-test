@@ -53,13 +53,6 @@ function Dog( name, race, rest ) {
    * @default 20
    */
   this.rest = rest || 20;
-
-  /** 
-   * @member {int} - Dog's happiness in points
-   * @default 100
-   */
-  this.happiness = 100;
-
 }
 
 /**
