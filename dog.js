@@ -23,6 +23,11 @@ function Dog( name, race ) {
    * @default 'doggy'
    */
   this.name = name || 'doggy';
+  
+  /** 
+   * @member {int} - Dog's happiness
+   * @default 100
+   */
   this.happiness = 100;
   
   /** 
@@ -77,6 +82,7 @@ Dog.prototype.poo = function() {
 
 /**
  * Make dog to play; it increase the level of happiness 5 points
+ * @returns {int}
  */
 Dog.prototype.play = function() {
   this.happiness += 5;
