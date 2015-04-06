@@ -15,6 +15,7 @@
  * @constructor
  * @param {string} name - Name of the dog, optional
  * @param {string} race - Race of the dog, optional
+ * @param {string} rest - Rest of the dog, optional
  * @example var myPet = new Dog( 'bolt' );
  */
 function Dog( name, race, rest ) {
