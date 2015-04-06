@@ -18,7 +18,7 @@
  * @param {int} rest - rest of the dog, optional
  * @example var myPet = new Dog( 'bolt' );
  */
-function Dog( name, race, rest) {
+function Dog( name, race) {
   /** 
    * @member {string} - Dog's name
    * @default 'doggy'
@@ -56,7 +56,7 @@ function Dog( name, race, rest) {
  */
 Dog.prototype.bark = function() {
   return 'guau, guau!';
-}
+};
 
 /**
  * Make the dog eat some food, this will increment it's weight in 10%
@@ -64,7 +64,7 @@ Dog.prototype.bark = function() {
  */
 Dog.prototype.eat = function( amountOfFood ) {
   this.weight += amountOfFood * 0.10;
-}
+};
 
 /**
  * Accesor method for the dog's weight property
@@ -72,7 +72,7 @@ Dog.prototype.eat = function( amountOfFood ) {
  */
 Dog.prototype.getWeight = function() {
   return Math.round( this.weight * 100) / 100;
-}
+};
 
 /**
  * Accesor method for the dog's rest property
@@ -80,21 +80,21 @@ Dog.prototype.getWeight = function() {
  */
 Dog.prototype.getRest = function() {
   return this.rest;
-}
+};
 
 /**
  * Make dog to the bathroom; it will lost 5% of weight by default
  */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
-}
+};
 
 /**
  * Hacemos que el perro descance
  */
  Dog.prototype.sleep = function(){
   this.rest += 5;
- }
+ };
 
 /**
  * Generate a JSON representation of the dog
@@ -102,7 +102,7 @@ Dog.prototype.poo = function() {
  */
 Dog.prototype.info = function() {
   return JSON.stringify( this );
-}
+};
 
 /**
  * Dog constructor
