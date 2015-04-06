@@ -82,7 +82,7 @@ Dog.prototype.poo = function() {
 
 /**
  * Make dog to play; it increase the level of happiness 5 points
- * @returns {int}
+ * @returns {int} - happiness value
  */
 Dog.prototype.play = function() {
   this.happiness += 5;
