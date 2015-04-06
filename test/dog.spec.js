@@ -24,4 +24,9 @@ describe( 'Dog', function() {
     pet.poo();
     expect( pet.getWeight() ).to.equal( 1.05 );
   });
+
+  it('should be able to sleep', function(){
+    pet.sleep();
+    expect( pet.getRest() ).to.equal( 25 );
+  });
 });
