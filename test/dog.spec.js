@@ -39,7 +39,7 @@ describe( 'Dog', function() {
   });
 
    it('should be able to coshear :)', function(){
-    expect( pet.coshear() ).to.equal("Dog can't coshear");
+    expect( pet.coshear() ).to.equal("Dog cant coshear");
     var new_pet = new Dog('Elias');
     expect( new_pet.coshear() ).to.equal("Dog coshing :D!!");
   });
