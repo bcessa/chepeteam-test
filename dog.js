@@ -25,6 +25,12 @@ function Dog( name, race ) {
   this.name = name || 'doggy';
   
   /** 
+   * @member {int} - Dog's happiness
+   * @default 100
+   */
+  this.happiness = 100;
+  
+  /** 
    * @member {int} - Dog's age in years
    * @default 1
    */
@@ -107,6 +113,15 @@ Dog.prototype.fly = function() {
     return 'Acabas de hacer un vuelo, nivel de felicidad es: ' + this.happiness;
   }
 };
+
+/**
+ * Make dog to play; it increase the level of happiness 5 points
+ * @returns {int} - happiness value
+ */
+ Dog.prototype.play = function() {
+   this.happiness += 5;
+   return this.happiness;
+ };
 
 /**
  * Generate a JSON representation of the dog

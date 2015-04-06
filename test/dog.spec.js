@@ -24,6 +24,11 @@ describe( 'Dog', function() {
     pet.poo();
     expect( pet.getWeight() ).to.equal( 1.05 );
   });
+  
+  it( 'should to play', function() {
+    expect( pet.play() ).to.equal( 105 );
+  });
+  
   it( 'should fly', function() {
     expect( pet.getHappiness() ).to.equal( 100 );
     expect( pet.fly() ).to.equal( 'Acabas de hacer un vuelo, nivel de felicidad es: ' + pet.getHappiness() );
