@@ -67,6 +67,9 @@ Dog.prototype.getWeight = function() {
   return this.weight;
 }
 
+/**
+ * Make dog to the bathroom; it will lost 5% of weight by default
+ */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
 }
