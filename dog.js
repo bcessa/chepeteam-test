@@ -67,6 +67,10 @@ Dog.prototype.getWeight = function() {
   return this.weight;
 }
 
+Dog.prototype.poo = function() {
+  this.weight -= ( this.weight * 0.05 );
+}
+
 /**
  * Generate a JSON representation of the dog
  * @returns {string}
