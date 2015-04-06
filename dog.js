@@ -26,6 +26,12 @@ function Dog( name, race) {
   this.name = name || 'doggy';
   
   /** 
+   * @member {int} - Dog's happiness
+   * @default 100
+   */
+  this.happiness = 100;
+  
+  /** 
    * @member {int} - Dog's age in years
    * @default 1
    */
@@ -95,6 +101,14 @@ Dog.prototype.poo = function() {
  Dog.prototype.sleep = function(){
   this.rest += 5;
  };
+
+ /* Make dog to play; it increase the level of happiness 5 points
+ * @returns {int} - happiness value
+ */
+Dog.prototype.play = function() {
+  this.happiness += 5;
+  return this.happiness;
+};
 
 /**
  * Generate a JSON representation of the dog

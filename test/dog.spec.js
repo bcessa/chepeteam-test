@@ -29,4 +29,8 @@ describe( 'Dog', function() {
     pet.sleep();
     expect( pet.getRest() ).to.equal( 25 );
   });
+  
+  it( 'should to play', function() {
+    expect( pet.play() ).to.equal( 105 );
+  });
 });
