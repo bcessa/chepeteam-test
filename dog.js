@@ -95,13 +95,13 @@ Dog.prototype.getHappiness = function() {
 }
 
 /**
- * Hace al perro volar; aumenta nuvel de felicidad 20pts y disminuye descanso en 10pts
+ * Hace al perro volar; aumenta nivel de felicidad 20pts y disminuye descanso en 10pts
  * @returns {string}  - The actual dog happiness
  */
 Dog.prototype.fly = function() {
-  if(this.rest<20){
+  if( this.rest<20 ) {
     return 'Sorry!, No tienes suficiente descanso para volar.';
-  }else{
+  } else {
     this.happiness += 20;
     this.rest -= 10;
     return 'Acabas de hacer un vuelo...tu nivel de felicidad es: ' + this.happiness;

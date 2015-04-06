@@ -26,7 +26,7 @@ describe( 'Dog', function() {
   });
   it( 'should fly', function() {
     expect( pet.getHappiness() ).to.equal( 100 );
-    expect( pet.fly() ).to.equal( 'Acabas de hacer un vuelo...tu nivel de felicidad es: ' + 120 );
+    expect( pet.fly() ).to.equal( 'Acabas de hacer un vuelo...tu nivel de felicidad es: ' + pet.getHappiness() );
     expect( pet.getHappiness() ).to.equal( 120 );
   });
 });
