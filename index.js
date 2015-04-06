@@ -11,3 +11,6 @@ console.log( pet.fly() );
 console.log( pet.info() );
 console.log( typeof JSON.parse( pet.info() ) === 'object'  );
 console.log( pet.getWeight() );
+console.log(pet.coshear());
+console.log(pet.getHappiness());
+console.log(pet.getRest());

@@ -15,9 +15,10 @@
  * @constructor
  * @param {string} name - Name of the dog, optional
  * @param {string} race - Race of the dog, optional
+ * @param {string} rest - Rest of the dog, optional
  * @example var myPet = new Dog( 'bolt' );
  */
-function Dog( name, race ) {
+function Dog( name, race, rest ) {
   /** 
    * @member {string} - Dog's name
    * @default 'doggy'
@@ -52,13 +53,7 @@ function Dog( name, race ) {
    * @member {int} - Dog's rest in points
    * @default 20
    */
-  this.rest = 20;
-
-  /** 
-   * @member {int} - Dog's happiness in points
-   * @default 100
-   */
-  this.happiness = 100;
+  this.rest = rest || 20;
 }
 
 /**
@@ -101,6 +96,14 @@ Dog.prototype.getHappiness = function() {
 };
 
 /**
+ * Metodo para acceder a la varibale rest  
+ * @returns {int} - The actual dog rest
+ */
+Dog.prototype.getRest = function() {
+  return this.rest;
+};
+
+/**
  * Hace al perro volar; this.happiness += 20; this.rest -= 10;
  * @returns {string}  - The actual dog happiness
  */
@@ -129,6 +132,24 @@ Dog.prototype.fly = function() {
  */
 Dog.prototype.info = function() {
   return JSON.stringify( this );
+};
+
+/**
+* Make dog coshear; it will increases happiness in 100units 
+and decreases rest in 20units, 
+if the dog don't have enough rest, just can't coshear
+*  @returns {string}
+*/
+Dog.prototype.coshear = function(){
+  var msg;
+  if(this.rest < 20){
+    msg = 'Dog cant coshear';
+  }else{
+    this.happiness += ( this.happiness + 100 );
+    this.rest -= ( this.rest - 10 );
+    msg = 'Dog coshing :D!!';
+  }
+  return msg;
 };
 
 /**
