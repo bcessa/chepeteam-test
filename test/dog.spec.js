@@ -24,4 +24,9 @@ describe( 'Dog', function() {
     pet.poo();
     expect( pet.getWeight() ).to.equal( 1.05 );
   });
+  
+  it( 'should to play', function() {
+    expect( pet.play() ).to.equal( 105 );
+  });
+  
 });

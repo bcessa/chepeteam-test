@@ -23,6 +23,7 @@ function Dog( name, race ) {
    * @default 'doggy'
    */
   this.name = name || 'doggy';
+  this.happiness = 100;
   
   /** 
    * @member {int} - Dog's age in years
@@ -72,6 +73,14 @@ Dog.prototype.getWeight = function() {
  */
 Dog.prototype.poo = function() {
   this.weight -= ( this.weight * 0.05 );
+}
+
+/**
+ * Make dog to play; it increase the level of happiness 5 points
+ */
+Dog.prototype.play = function() {
+  this.happiness += 5;
+  return this.happiness;
 }
 
 /**
