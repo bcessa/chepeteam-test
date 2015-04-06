@@ -30,8 +30,23 @@ describe( 'Dog', function() {
     pet.sleep();
     expect( pet.getRest() ).to.equal(  before + 5 );
   });
-  
+
   it( 'should to play', function() {
-    expect( pet.play() ).to.equal( 105 );
+    var first = pet.getHappiness();
+    pet.play();
+    var second = pet.getHappiness();
+    expect( second ).to.equal( first + 5 );
+  });
+  
+  it( 'should fly', function() {
+    var first = pet.getHappiness();
+    pet.fly();
+    expect( pet.getHappiness() ).to.equal( first + 20 );
+  });
+
+   it('should be able to coshear :)', function(){
+    expect( pet.coshear() ).to.equal("Dog cant coshear");
+    pet.sleep();
+    expect( pet.coshear() ).to.equal("Dog coshing :D!!");
   });
 });
