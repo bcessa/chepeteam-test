@@ -64,7 +64,14 @@ Dog.prototype.eat = function( amountOfFood ) {
  * @returns {float} - The actual dog weight
  */
 Dog.prototype.getWeight = function() {
-  return this.weight;
+  return Math.round( this.weight * 100) / 100;
+}
+
+/**
+ * Make dog to the bathroom; it will lost 5% of weight by default
+ */
+Dog.prototype.poo = function() {
+  this.weight -= ( this.weight * 0.05 );
 }
 
 /**

@@ -19,4 +19,9 @@ describe( 'Dog', function() {
   it( 'should provide accurate info', function() {
     expect( JSON.parse( pet.info() ) ).to.be.an( 'object' );
   });
+  
+  it( 'should be able to poo', function() {
+    pet.poo();
+    expect( pet.getWeight() ).to.equal( 1.05 );
+  });
 });
