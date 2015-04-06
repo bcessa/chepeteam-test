@@ -26,8 +26,9 @@ describe( 'Dog', function() {
   });
 
   it('should be able to sleep', function(){
+    var before = pet.getRest();
     pet.sleep();
-    expect( pet.getRest() ).to.equal( 25 );
+    expect( pet.getRest() ).to.equal(  before + 5 );
   });
   
   it( 'should to play', function() {
