@@ -81,14 +81,6 @@ Dog.prototype.getWeight = function() {
 };
 
 /**
- * Accesor method for the dog's rest property
- * @returns {int} - The actual dog rest
- */
-Dog.prototype.getRest = function() {
-  return this.rest;
-};
-
-/**
  * Make dog to the bathroom; it will lost 5% of weight by default
  */
 Dog.prototype.poo = function() {
