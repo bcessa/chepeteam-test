@@ -14,3 +14,5 @@ console.log( pet.getWeight() );
 console.log(pet.coshear());
 console.log(pet.getHappiness());
 console.log(pet.getRest());
+pet.sleep();
+console.log( pet.info() );

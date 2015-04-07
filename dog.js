@@ -15,7 +15,7 @@
  * @constructor
  * @param {string} name - Name of the dog, optional
  * @param {string} race - Race of the dog, optional
- * @param {string} rest - Rest of the dog, optional
+ * @param {int} rest - rest of the dog, optional
  * @example var myPet = new Dog( 'bolt' );
  */
 function Dog( name, race, rest ) {
@@ -88,6 +88,14 @@ Dog.prototype.poo = function() {
 };
 
 /**
+ * Hacemos que el perro descance
+ */
+ Dog.prototype.sleep = function(){
+  this.rest += 5;
+ };
+
+ /* Make dog to play; it increase the level of happiness 5 points
+ * @returns {int} - happiness value
  * Metodo para acceder a la varibale happiness  
  * @returns {int} - The actual dog happiness
  */
